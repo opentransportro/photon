@@ -110,7 +110,7 @@ jobs:
       - name: Prepare import environment
         run: |
             if [ ! -f monaco-latest.osm.pbf ]; then
-                wget --no-verbose https://download.geofabrik.de/europe/monaco-latest.osm.pbf
+                wget --no-verbose https://download.geofabrik.de/europe/romania-latest.osm.pbf
             fi
             mkdir data-env
             cd data-env
@@ -118,7 +118,7 @@ jobs:
 
       - name: Import Nominatim
         run: |
-          nominatim import --osm-file ../monaco-latest.osm.pbf --reverse-only
+          nominatim import --osm-file ../romania-latest.osm.pbf --reverse-only
           nominatim admin --check-database
         shell: bash
         working-directory: data-env
