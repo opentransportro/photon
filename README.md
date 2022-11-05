@@ -4,7 +4,7 @@
 
 _photon_ is an open source geocoder built for [OpenStreetMap](https://openstreetmap.org) data. It is based on [elasticsearch](http://elasticsearch.org/) - an efficient, powerful and highly scalable search platform.
 
-_photon_ was started by [komoot](http://www.komoot.de) and provides search-as-you-type and multilingual support. It's used in production with thousands of requests per minute at [www.komoot.de](http://www.komoot.de). Find our public API and demo on [photon.komoot.io](http://photon.komoot.io). Until October 2020 the API was available under photon.komoot.**de**. Requests still work as they redirected but please update your apps accordingly.
+_photon_ was started by [komoot](http://www.komoot.de) and provides search-as-you-type and multilingual support. Find our public API and demo on [photon.komoot.io](http://photon.komoot.io). Until October 2020 the API was available under photon.komoot.**de**. Please update your apps accordingly.
 
 ### Contribution
 
@@ -179,6 +179,26 @@ Or, just by they key
 ```
 http://localhost:2322/api?q=berlin&osm_tag=tourism
 ```
+
+#### Filter results by layer
+
+List of available layers:
+
+- house
+- street
+- locality
+- district
+- city
+- county
+- state
+- country
+
+```
+http://localhost:2322/api?q=berlin&layer=city&layer=locality
+```
+
+Example above will return both cities and localities.
+
 
 #### Results as GeoJSON
 ```json
