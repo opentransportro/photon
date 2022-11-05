@@ -73,7 +73,7 @@ jobs:
         with:
             path: |
                Nominatim/data/country_grid.sql.gz
-               monaco-latest.osm.pbf
+               romania-latest.osm.pbf
             key: nominatim-test-data-${{ steps.get-date.outputs.date }}
 
       - name: Setup database
@@ -110,7 +110,7 @@ jobs:
 
       - name: Prepare import environment
         run: |
-            if [ ! -f monaco-latest.osm.pbf ]; then
+            if [ ! -f romania-latest.osm.pbf ]; then
                 wget --no-verbose https://download.geofabrik.de/europe/romania-latest.osm.pbf
             fi
             mkdir data-env
